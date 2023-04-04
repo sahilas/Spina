@@ -1,28 +1,22 @@
 <!DOCTYPE html>
 <html lang="<%= I18n.locale %>">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-    <meta name="turbo-cache-control" content="no-preview" />
-    <%= csrf_meta_tags %>
-    
-    <link rel="icon" href="<%= image_url('spina/favicon.png') %>" />
-    
-    <title>Spina CMS</title>
-
-    <!-- Stylesheets -->
-    <%= stylesheet_link_tag "spina/tailwind", "spina/fonts", "spina/animate", "data-turbo-track": "reload" %>
-    
-    <!-- Spina's importmap -->
-    <%= spina_importmap_tags %>
-    
-    <!-- Plugins & Hooks -->
-    <%= yield(:head) %>
-    <%= render Spina::Hooks::HookComponent.new(partial: "head") %>
-  </head>
-
-  <body>
-    <%= render "spina/admin/shared/version" %>
-    <%= content_for?(:body) ? yield(:body) : yield %>
-  </body>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <meta name="turbo-cache-control" content="no-preview" />
+  <%= csrf_meta_tags %>
+  <link rel="icon" href="<%= image_url('spina/favicon.png') %>" />
+  <title>CHIP CMS</title>
+  <!-- Stylesheets -->
+  <%= stylesheet_link_tag "spina/tailwind", "spina/fonts", "spina/animate", "data-turbo-track": "reload" %>
+  <!-- Spina's importmap -->
+  <%= spina_importmap_tags %>
+  <!-- Plugins & Hooks -->
+  <%= yield(:head) %>
+  <%= render Spina::Hooks::HookComponent.new(partial: "head") %>
+</head>
+<body>
+<%= render "spina/admin/shared/version" %>
+<%= content_for?(:body) ? yield(:body) : yield %>
+</body>
 </html>
