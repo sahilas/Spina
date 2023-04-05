@@ -8,9 +8,9 @@
   <link rel="icon" href="<%= image_url('spina/favicon.png') %>" />
   <title>CHIP CMS</title>
   <!-- Stylesheets -->
-  <%= stylesheet_link_tag "spina/tailwind", "spina/fonts", "spina/animate", "data-turbo-track": "reload" %>
-  <!-- Spina's importmap -->
-  <%= spina_importmap_tags %>
+  <%= stylesheet_link_tag "spina/tailwind", "spina/animate", "data-turbo-track": "reload" %>
+  <!-- Spina's js -->
+  <%= javascript_include_tag "spina/application", "data-turbo-track": "reload" %>
   <!-- Plugins & Hooks -->
   <%= yield(:head) %>
   <%= render Spina::Hooks::HookComponent.new(partial: "head") %>

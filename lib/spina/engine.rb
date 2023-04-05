@@ -1,4 +1,7 @@
-require "importmap-rails"
+require 'propshaft'
+require 'cssbundling-rails'
+require 'jsbundling-rails'
+require 'esbuild-rails'
 require "turbo-rails"
 require "stimulus-rails"
 require "ancestry"
@@ -11,7 +14,6 @@ require "attr_json"
 require "view_component"
 require "jsonapi/serializer"
 require "browser"
-require "sprockets/railtie"
 
 module Spina
   class Engine < ::Rails::Engine

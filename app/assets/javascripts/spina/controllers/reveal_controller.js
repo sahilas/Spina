@@ -1,1 +1,0 @@
-//= require ../libraries/stimulus-reveal@1.2.4.js

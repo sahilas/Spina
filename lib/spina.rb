@@ -24,7 +24,6 @@ module Spina
     :api_path,
     :authentication,
     :backend_path,
-    :importmap,
     :frontend_parent_controller,
     :disable_frontend_routes,
     :disable_decorator_load,
@@ -61,9 +60,6 @@ module Spina
   # - config.queues.page_updates
   self.queues = ActiveSupport::InheritableOptions.new
 
-  # An importmap specifically meant for Spina
-  self.importmap = Importmap::Map.new
-
   # Tailwind content
   # In order for Tailwind to generate all of the CSS Spina needs,
   # it needs to know about every single file in your project
@@ -73,7 +69,7 @@ module Spina
   self.tailwind_content = ["#{Spina::Engine.root}/app/views/**/*.*",
     "#{Spina::Engine.root}/app/components/**/*.*",
     "#{Spina::Engine.root}/app/helpers/**/*.*",
-    "#{Spina::Engine.root}/app/assets/javascripts/**/*.js",
+    "#{Spina::Engine.root}/app/javascript/**/*.js",
     "#{Spina::Engine.root}/app/**/application.tailwind.css"]
 
   self.tailwind_plugins = %w[@tailwindcss/forms @tailwindcss/aspect-ratio @tailwindcss/typography]
